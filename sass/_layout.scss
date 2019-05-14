@@ -1,0 +1,18 @@
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    p {
+        color: white;
+        display: block;
+        padding: 80px 50px;
+        position: absolute;
+        font-size: 50px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: rgb(128, 128, 128);
+        background-color: rgba(128, 128, 128, 0.5);
+        border-radius: 0 100px 100px 100px;
+    }
+}
+
+@include randomPositions;
