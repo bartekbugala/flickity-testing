@@ -5,7 +5,7 @@
 }
 @include carouselCells;
 .flickity-page-dots {
-    bottom: 0px;
+    bottom: 10px;
   }
   /* white circles */
   .flickity-page-dots .dot {
@@ -24,6 +24,12 @@
     width: 100%; /* full width */
     height: 600px; /* height of carousel */
     margin-right: 10px;
+  }
+
+  .progress-bar {
+    height: 20px;
+    width: 0;
+    background: #333;
   }
   
     

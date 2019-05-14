@@ -50,7 +50,7 @@
 }
 
 .flickity-page-dots {
-  bottom: 0px;
+  bottom: 10px;
 }
 
 /* white circles */
@@ -75,6 +75,12 @@
   margin-right: 10px;
 }
 
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background: #333;
+}
+
 .container {
   width: 1200px;
   margin: 0 auto;
@@ -83,9 +89,9 @@
 .container p {
   color: white;
   display: block;
-  padding: 80px 50px;
+  padding: 60px 30px;
   position: absolute;
-  font-size: 50px;
+  font-size: 40px;
   margin: 0 auto;
   text-align: center;
   background-color: gray;
@@ -93,48 +99,57 @@
   border-radius: 0 100px 100px 100px;
 }
 
+.button-group {
+  position: absolute;
+  z-index: 1000;
+}
+
+.button-group .btn {
+  z-index: 1000;
+}
+
 .carousel-cell-1 .container p {
-  right: 33%;
-  bottom: 17%;
-}
-
-.carousel-cell-2 .container p {
-  right: 27%;
-  bottom: 22%;
-}
-
-.carousel-cell-3 .container p {
-  right: 17%;
-  bottom: 19%;
-}
-
-.carousel-cell-4 .container p {
-  right: 20%;
+  right: 24%;
   bottom: 6%;
 }
 
-.carousel-cell-5 .container p {
-  right: 19%;
+.carousel-cell-2 .container p {
+  right: 6%;
+  bottom: 25%;
+}
+
+.carousel-cell-3 .container p {
+  right: 29%;
   bottom: 21%;
 }
 
-.carousel-cell-6 .container p {
+.carousel-cell-4 .container p {
+  right: 33%;
+  bottom: 26%;
+}
+
+.carousel-cell-5 .container p {
   right: 30%;
-  bottom: 7%;
+  bottom: 17%;
+}
+
+.carousel-cell-6 .container p {
+  right: 16%;
+  bottom: 40%;
 }
 
 .carousel-cell-7 .container p {
-  right: 20%;
-  bottom: 11%;
+  right: 6%;
+  bottom: 42%;
 }
 
 .carousel-cell-8 .container p {
-  right: 32%;
-  bottom: 27%;
+  right: 11%;
+  bottom: 12%;
 }
 
 .carousel-cell-9 .container p {
-  right: 23%;
-  bottom: 17%;
+  right: 28%;
+  bottom: 28%;
 }
 /*# sourceMappingURL=style.css.map */
