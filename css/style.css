@@ -1,65 +1,140 @@
+/* position dots in carousel */
 .carousel-wrapper {
   width: 100%;
-  height: 500px;
+  height: 800px;
 }
 
 .carousel-cell-1 {
-  background-image: url(https://picsum.photos/600/300?random=1);
-  height: 300px;
-  width: 600px;
+  background-image: url(../images/1600x600-1.jpg);
+  background-size: cover;
 }
 
 .carousel-cell-2 {
-  background-image: url(https://picsum.photos/600/300?random=2);
-  height: 300px;
-  width: 600px;
+  background-image: url(../images/1600x600-2.jpg);
+  background-size: cover;
 }
 
 .carousel-cell-3 {
-  background-image: url(https://picsum.photos/600/300?random=3);
-  height: 300px;
-  width: 600px;
+  background-image: url(../images/1600x600-3.jpg);
+  background-size: cover;
 }
 
 .carousel-cell-4 {
-  background-image: url(https://picsum.photos/600/300?random=4);
-  height: 300px;
-  width: 600px;
+  background-image: url(../images/1600x600-4.jpg);
+  background-size: cover;
 }
 
 .carousel-cell-5 {
-  background-image: url(https://picsum.photos/600/300?random=5);
-  height: 300px;
-  width: 600px;
+  background-image: url(../images/1600x600-5.jpg);
+  background-size: cover;
 }
 
 .carousel-cell-6 {
-  background-image: url(https://picsum.photos/600/300?random=6);
-  height: 300px;
-  width: 600px;
+  background-image: url(../images/1600x600-6.jpg);
+  background-size: cover;
 }
 
 .carousel-cell-7 {
-  background-image: url(https://picsum.photos/600/300?random=7);
-  height: 300px;
-  width: 600px;
+  background-image: url(../images/1600x600-7.jpg);
+  background-size: cover;
 }
 
 .carousel-cell-8 {
-  background-image: url(https://picsum.photos/600/300?random=8);
-  height: 300px;
-  width: 600px;
+  background-image: url(../images/1600x600-8.jpg);
+  background-size: cover;
 }
 
 .carousel-cell-9 {
-  background-image: url(https://picsum.photos/600/300?random=9);
-  height: 300px;
-  width: 600px;
+  background-image: url(../images/1600x600-9.jpg);
+  background-size: cover;
 }
 
-.carousel-cell-10 {
-  background-image: url(https://picsum.photos/600/300?random=10);
-  height: 300px;
-  width: 600px;
+.flickity-page-dots {
+  bottom: 0px;
+}
+
+/* white circles */
+.flickity-page-dots .dot {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background: transparent;
+  border: 2px solid white;
+}
+
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: white;
+}
+
+.carousel-cell {
+  width: 100%;
+  /* full width */
+  height: 600px;
+  /* height of carousel */
+  margin-right: 10px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container p {
+  color: white;
+  display: block;
+  padding: 80px 50px;
+  position: absolute;
+  font-size: 50px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: gray;
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 0 100px 100px 100px;
+}
+
+.carousel-cell-1 .container p {
+  right: 33%;
+  bottom: 17%;
+}
+
+.carousel-cell-2 .container p {
+  right: 27%;
+  bottom: 22%;
+}
+
+.carousel-cell-3 .container p {
+  right: 17%;
+  bottom: 19%;
+}
+
+.carousel-cell-4 .container p {
+  right: 20%;
+  bottom: 6%;
+}
+
+.carousel-cell-5 .container p {
+  right: 19%;
+  bottom: 21%;
+}
+
+.carousel-cell-6 .container p {
+  right: 30%;
+  bottom: 7%;
+}
+
+.carousel-cell-7 .container p {
+  right: 20%;
+  bottom: 11%;
+}
+
+.carousel-cell-8 .container p {
+  right: 32%;
+  bottom: 27%;
+}
+
+.carousel-cell-9 .container p {
+  right: 23%;
+  bottom: 17%;
 }
 /*# sourceMappingURL=style.css.map */
