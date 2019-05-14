@@ -89,11 +89,13 @@
 .container p {
   color: white;
   display: block;
-  padding: 60px 30px;
+  padding: 40px 20px;
   position: absolute;
-  font-size: 40px;
+  font-size: 30px;
   margin: 0 auto;
   text-align: center;
+  top: 10px;
+  right: 10px;
   background-color: gray;
   background-color: rgba(128, 128, 128, 0.5);
   border-radius: 0 100px 100px 100px;
@@ -108,48 +110,75 @@
   z-index: 1000;
 }
 
-.carousel-cell-1 .container p {
-  right: 24%;
-  bottom: 6%;
+@media (min-width: 992px) {
+  .carousel-cell-1 .container p {
+    right: 19%;
+    bottom: 22%;
+    top: unset;
+  }
+  .carousel-cell-2 .container p {
+    right: 31%;
+    bottom: 33%;
+    top: unset;
+  }
+  .carousel-cell-3 .container p {
+    right: 12%;
+    bottom: 6%;
+    top: unset;
+  }
+  .carousel-cell-4 .container p {
+    right: 6%;
+    bottom: 11%;
+    top: unset;
+  }
+  .carousel-cell-5 .container p {
+    right: 15%;
+    bottom: 40%;
+    top: unset;
+  }
+  .carousel-cell-6 .container p {
+    right: 10%;
+    bottom: 35%;
+    top: unset;
+  }
+  .carousel-cell-7 .container p {
+    right: 23%;
+    bottom: 13%;
+    top: unset;
+  }
+  .carousel-cell-8 .container p {
+    right: 21%;
+    bottom: 37%;
+    top: unset;
+  }
+  .carousel-cell-9 .container p {
+    right: 26%;
+    bottom: 27%;
+    top: unset;
+  }
 }
 
-.carousel-cell-2 .container p {
-  right: 6%;
-  bottom: 25%;
-}
-
-.carousel-cell-3 .container p {
-  right: 29%;
-  bottom: 21%;
-}
-
-.carousel-cell-4 .container p {
-  right: 33%;
-  bottom: 26%;
-}
-
-.carousel-cell-5 .container p {
-  right: 30%;
-  bottom: 17%;
-}
-
-.carousel-cell-6 .container p {
-  right: 16%;
-  bottom: 40%;
-}
-
-.carousel-cell-7 .container p {
-  right: 6%;
-  bottom: 42%;
-}
-
-.carousel-cell-8 .container p {
-  right: 11%;
-  bottom: 12%;
-}
-
-.carousel-cell-9 .container p {
-  right: 28%;
-  bottom: 28%;
+@media (max-width: 768px) {
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .container p {
+    color: white;
+    display: block;
+    padding: 5px 5px;
+    position: absolute;
+    font-size: 20px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 0;
+    width: 100%;
+    margin-top: 50%;
+  }
+  [class^=".carousel-cell-"] .container p {
+    top: unset;
+    bottom: unset;
+  }
 }
 /*# sourceMappingURL=style.css.map */

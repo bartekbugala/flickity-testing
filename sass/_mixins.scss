@@ -8,10 +8,13 @@
 }
 
 @mixin randomPositions {
+    @media(min-width: 992px) {
   @for $i from 1 through 9 {
     .carousel-cell-#{$i} .container p {
       right: random(30) + 5%;
       bottom: random(40) + 5%;
+      top: unset;
     }
   }
+}
 }
