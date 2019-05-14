@@ -2,6 +2,19 @@
     width: 100%;
     height: 500px;
 }
+@mixin carouselCells {
+    @for $i from 1 through 10 {
+      .carousel-cell-#{$i} {
+        background-image: url(https://picsum.photos/600/300?random=#{$i});
+        height: 300px;
+        width: 600px;
+      }
+    }
+  }
+
+@include carouselCells;
+
+
 // CHEATSHEET
 //
 //@import "normalize"; -> _normalize.scss
