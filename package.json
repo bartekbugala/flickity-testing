@@ -4,6 +4,7 @@
   "description": "Flickity plugin testing",
   "main": "index.html",
   "scripts": {
+    "cook:mustache": "curl https://raw.githubusercontent.com/janl/mustache.js/master/mustache.js -o vendor/mustache.js",
     "test": "npm-run-all test:*",
     "test:all": "html-validator --allfiles --verbose",
     "init-project": "npm install && npm-run-all init:*",
