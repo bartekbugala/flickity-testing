@@ -5,47 +5,38 @@
 }
 
 .carousel-cell-1 {
-  background-image: url(../images/1600x600-1.jpg);
   background-size: cover;
 }
 
 .carousel-cell-2 {
-  background-image: url(../images/1600x600-2.jpg);
   background-size: cover;
 }
 
 .carousel-cell-3 {
-  background-image: url(../images/1600x600-3.jpg);
   background-size: cover;
 }
 
 .carousel-cell-4 {
-  background-image: url(../images/1600x600-4.jpg);
   background-size: cover;
 }
 
 .carousel-cell-5 {
-  background-image: url(../images/1600x600-5.jpg);
   background-size: cover;
 }
 
 .carousel-cell-6 {
-  background-image: url(../images/1600x600-6.jpg);
   background-size: cover;
 }
 
 .carousel-cell-7 {
-  background-image: url(../images/1600x600-7.jpg);
   background-size: cover;
 }
 
 .carousel-cell-8 {
-  background-image: url(../images/1600x600-8.jpg);
   background-size: cover;
 }
 
 .carousel-cell-9 {
-  background-image: url(../images/1600x600-9.jpg);
   background-size: cover;
 }
 
@@ -112,48 +103,48 @@
 
 @media (min-width: 992px) {
   .carousel-cell-1 .container p {
-    right: 19%;
-    bottom: 37%;
+    right: 21%;
+    bottom: 34%;
     top: unset;
   }
   .carousel-cell-2 .container p {
-    right: 13%;
+    right: 19%;
     bottom: 10%;
     top: unset;
   }
   .carousel-cell-3 .container p {
-    right: 8%;
-    bottom: 6%;
+    right: 21%;
+    bottom: 35%;
     top: unset;
   }
   .carousel-cell-4 .container p {
-    right: 29%;
-    bottom: 24%;
+    right: 6%;
+    bottom: 12%;
     top: unset;
   }
   .carousel-cell-5 .container p {
-    right: 19%;
-    bottom: 33%;
+    right: 12%;
+    bottom: 38%;
     top: unset;
   }
   .carousel-cell-6 .container p {
-    right: 25%;
-    bottom: 30%;
+    right: 24%;
+    bottom: 19%;
     top: unset;
   }
   .carousel-cell-7 .container p {
-    right: 11%;
-    bottom: 44%;
+    right: 19%;
+    bottom: 14%;
     top: unset;
   }
   .carousel-cell-8 .container p {
     right: 22%;
-    bottom: 32%;
+    bottom: 28%;
     top: unset;
   }
   .carousel-cell-9 .container p {
-    right: 13%;
-    bottom: 36%;
+    right: 35%;
+    bottom: 33%;
     top: unset;
   }
 }

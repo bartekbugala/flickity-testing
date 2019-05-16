@@ -24,9 +24,9 @@
     </div>
 
     <script id="carousel-item" type="x-tmpl-mustache">
-        <div class="carousel-cell carousel-cell-{{ number }}">
+        <div class="carousel-cell carousel-cell-{{ number }}" style="background-image:url({{ image }})">
           <div class="container">
-              <h2> {{ title }} </h2>
+              <h2> "{{ title }}" </h2>
               {{{ description }}}
           </div>
         </div>
@@ -36,50 +36,40 @@
       var mySlides = [
         {
           number: 1,
-          image: "./images/1600x600-1.jpg",
-          title: "Image 1",
-          description: "Góry, po których się nie wspinałem",
-          markup:
-            '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+          image: './images/1600x600-1.jpg',
+          title: 'Mountains',
+          description: '<p>Góry, po których się nie wspinałem</p>'
         },
         {
           number: 2,
-          image: "./images/1600x600-2.jpg",
-          title: "Image 2",
-          description: "Tajemnicza rura,<br />pod którą nie przechodziłem",
-          markup:
-            '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+          image: './images/1600x600-2.jpg',
+          title: 'Pipeline',
+          description: '<p>Tajemnicza rura,<br />pod którą nie przechodziłem</p>'
         },
         {
           number: 3,
-          image: "./images/1600x600-3.jpg",
-          title: "Image 3",
-          description: "Balony, których nie widziałem",
-          markup:
-            '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+          image: './images/1600x600-3.jpg',
+          title: 'Baloon race',
+          description: '<p>Balony, których nie widziałem<p>'
         },
         {
           number: 4,
-          image: "./images/1600x600-4.jpg",
-          title: "Image 4",
-          description: "Skok, którego nie wykonałem",
-          markup:
-            '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+          image: './images/1600x600-4.jpg',
+          title: 'Dare',
+          description: '<p>Skok, którego nie wykonałem</p>'
         },
         {
           number: 5,
-          image: "./images/1600x600-5.jpg",
-          title: "Image 5",
-          description: "Mgła, której nie sfotografowałem",
-          markup:
-            '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+          image: './images/1600x600-5.jpg',
+          title: 'Misty Mountains',
+          description: '<p>Mgła, której nie sfotografowałem</p>'
         }
       ];
-    </script>
-
+    </script> 
     <script src="./vendor/flickity/flickity.pkgd.min.js"></script>
     <script src="https://unpkg.com/flickity-hash@1/hash.js"></script>
     <script src="./vendor/mustache.js"></script>
+    <script src="./js/mustache.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
