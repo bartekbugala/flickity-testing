@@ -34,18 +34,19 @@ btnStart.addEventListener( 'click', function( event ) {
 
 
 /////// MUSTACHE
-
+(function(){ 
 var carouselItem = document.getElementById('carousel-item').innerHTML;
 
 Mustache.parse(carouselItem);
 
+////
+
 var listItems = '';
 
 for(var i = 0; i < mySlides.length; i++){
-  console.log(mySlides);
   listItems += Mustache.render(carouselItem, mySlides[i]);
 };
 
-var fullSlideList = Mustache.render(carouselItem, {listItems});
+results.insertAdjacentHTML('beforeend', listItems);
 
-results.insertAdjacentHTML('beforeend', fullSlideList);
+})(); 

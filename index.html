@@ -17,24 +17,25 @@
           Back to start
         </button>
       </div>
-      <div class="main-carousel">
-        <div class="carousel-cell carousel-cell-1" id="carousel-cell1">
-          <div class="container">
-            <div id="results" class="carousel-cell"></div>
-          </div>
-        </div>
+      <div id="results" class="main-carousel">
+          
       </div>
       <div class="progress-bar"></div>
     </div>
 
     <script id="carousel-item" type="x-tmpl-mustache">
-      <h2> {{ title }} </h2>
-      {{{ description }}}
+        <div class="carousel-cell carousel-cell-{{ number }}">
+          <div class="container">
+              <h2> {{ title }} </h2>
+              {{{ description }}}
+          </div>
+        </div>
     </script>
 
     <script>
       var mySlides = [
         {
+          number: 1,
           image: "./images/1600x600-1.jpg",
           title: "Image 1",
           description: "Góry, po których się nie wspinałem",
@@ -42,6 +43,7 @@
             '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
         },
         {
+          number: 2,
           image: "./images/1600x600-2.jpg",
           title: "Image 2",
           description: "Tajemnicza rura,<br />pod którą nie przechodziłem",
@@ -49,6 +51,7 @@
             '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
         },
         {
+          number: 3,
           image: "./images/1600x600-3.jpg",
           title: "Image 3",
           description: "Balony, których nie widziałem",
@@ -56,6 +59,7 @@
             '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
         },
         {
+          number: 4,
           image: "./images/1600x600-4.jpg",
           title: "Image 4",
           description: "Skok, którego nie wykonałem",
@@ -63,6 +67,7 @@
             '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
         },
         {
+          number: 5,
           image: "./images/1600x600-5.jpg",
           title: "Image 5",
           description: "Mgła, której nie sfotografowałem",
