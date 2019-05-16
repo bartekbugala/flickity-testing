@@ -22,9 +22,9 @@
     "watch:sassprefixer": "onchange -d 100 sass/*.scss sass/**/*.scss -- npm-run-all watch:sass watch:autoprefixer",
     "watch:sass": "node-sass --output-style expanded --source-map true -o css sass",
     "watch:autoprefixer": "autoprefixer-cli css/style.css ",
+    "watch:validate": "onchange *.html -- npm-run-all test:all",
     "_watch:git": "onchange * -- git status",
-    "watch:browsersync": "browser-sync start --server --files=css js *.html",
-    "watch:validate": "onchange *.html -- test:all"
+    "watch:browsersync": "browser-sync start --server --files=css js *.html"
   },
   "keywords": [],
   "author": "Bartek Bugała",

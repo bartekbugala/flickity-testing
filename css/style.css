@@ -103,48 +103,48 @@
 
 @media (min-width: 992px) {
   .carousel-cell-1 .container p {
-    right: 26%;
-    bottom: 30%;
+    right: 23%;
+    bottom: 40%;
     top: unset;
   }
   .carousel-cell-2 .container p {
-    right: 8%;
-    bottom: 8%;
+    right: 30%;
+    bottom: 30%;
     top: unset;
   }
   .carousel-cell-3 .container p {
-    right: 23%;
-    bottom: 22%;
-    top: unset;
-  }
-  .carousel-cell-4 .container p {
-    right: 6%;
-    bottom: 17%;
-    top: unset;
-  }
-  .carousel-cell-5 .container p {
-    right: 19%;
+    right: 8%;
     bottom: 33%;
     top: unset;
   }
-  .carousel-cell-6 .container p {
+  .carousel-cell-4 .container p {
+    right: 20%;
+    bottom: 18%;
+    top: unset;
+  }
+  .carousel-cell-5 .container p {
     right: 6%;
-    bottom: 17%;
+    bottom: 14%;
+    top: unset;
+  }
+  .carousel-cell-6 .container p {
+    right: 34%;
+    bottom: 7%;
     top: unset;
   }
   .carousel-cell-7 .container p {
-    right: 30%;
-    bottom: 43%;
+    right: 35%;
+    bottom: 16%;
     top: unset;
   }
   .carousel-cell-8 .container p {
-    right: 22%;
-    bottom: 22%;
+    right: 35%;
+    bottom: 35%;
     top: unset;
   }
   .carousel-cell-9 .container p {
-    right: 35%;
-    bottom: 41%;
+    right: 30%;
+    bottom: 40%;
     top: unset;
   }
 }
