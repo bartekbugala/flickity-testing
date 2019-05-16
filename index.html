@@ -20,78 +20,55 @@
       <div class="main-carousel">
         <div class="carousel-cell carousel-cell-1" id="carousel-cell1">
           <div class="container">
-            <p>Góry, po których jeszcze nie chodziłem</p>
-          </div>
-        </div>
-        <div class="carousel-cell carousel-cell-2" id="carousel-cell2">
-          <div class="container">
-            <p>Tajemnicza rura,<br />pod którą nie przechodziłem</p>
-          </div>
-        </div>
-        <div class="carousel-cell carousel-cell-3" id="carousel-cell3">
-          <div class="container"><p>Balony, których nie widziałem</p></div>
-        </div>
-        <div class="carousel-cell carousel-cell-4" id="carousel-cell4">
-          <div class="container"><p>Skok, którego nie wykonałem</p></div>
-        </div>
-        <div class="carousel-cell carousel-cell-5" id="carousel-cell5">
-          <div class="container"><p>Mgła, której nie sfotografowałem</p></div>
-        </div>
-        <div class="carousel-cell carousel-cell-6" id="carousel-cell6">
-          <div class="container"><p>Tafla wody, której nie zmąciłem</p></div>
-        </div>
-        <div class="carousel-cell carousel-cell-7" id="carousel-cell7">
-          <div class="container"><p>Smog, którym nie oddychałem</p></div>
-        </div>
-        <div class="carousel-cell carousel-cell-8" id="carousel-cell8">
-          <div class="container">
-            <p>Linie energetyczne, o które nie zahaczyłem</p>
-          </div>
-        </div>
-        <div class="carousel-cell carousel-cell-9" id="carousel-cell9">
-          <div class="container">
-            <p>Leśny wąż, którego nie przeciągnąłem</p>
+            <div id="results" class="carousel-cell"></div>
           </div>
         </div>
       </div>
       <div class="progress-bar"></div>
     </div>
 
+    <script id="carousel-item" type="x-tmpl-mustache">
+      <h2> {{ title }} </h2>
+      {{{ description }}}
+    </script>
+
     <script>
       var mySlides = [
         {
-          image: './images/1600x600-1.jpg',
-          title: 'Image 1',
-          description: 'Góry, po których się nie wspinałem',
-          markup: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-
+          image: "./images/1600x600-1.jpg",
+          title: "Image 1",
+          description: "Góry, po których się nie wspinałem",
+          markup:
+            '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
         },
         {
-          image: './images/1600x600-2.jpg',
-          title: 'Image 2',
-          description: 'Tajemnicza rura,<br />pod którą nie przechodziłem',
-          markup: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-
+          image: "./images/1600x600-2.jpg",
+          title: "Image 2",
+          description: "Tajemnicza rura,<br />pod którą nie przechodziłem",
+          markup:
+            '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
         },
         {
-          image: './images/1600x600-3.jpg',
-          title: 'Image 3',
-          description: 'Balony, których nie widziałem',
-          markup: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-
+          image: "./images/1600x600-3.jpg",
+          title: "Image 3",
+          description: "Balony, których nie widziałem",
+          markup:
+            '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
         },
         {
-          image: './images/1600x600-4.jpg',
-          title: 'Image 4',
-          description: 'Skok, którego nie wykonałem',
-          markup: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+          image: "./images/1600x600-4.jpg",
+          title: "Image 4",
+          description: "Skok, którego nie wykonałem",
+          markup:
+            '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
         },
         {
-          image: './images/1600x600-5.jpg',
-          title: 'Image 5',
-          description: 'Mgła, której nie sfotografowałem',
-          markup: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
-        },
+          image: "./images/1600x600-5.jpg",
+          title: "Image 5",
+          description: "Mgła, której nie sfotografowałem",
+          markup:
+            '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+        }
       ];
     </script>
 

@@ -4,7 +4,6 @@
   "description": "Flickity plugin testing",
   "main": "index.html",
   "scripts": {
-    "cook:mustache": "curl https://raw.githubusercontent.com/janl/mustache.js/master/mustache.js -o vendor/mustache.js",
     "test": "npm-run-all test:*",
     "test:all": "html-validator --allfiles --verbose",
     "init-project": "npm install && npm-run-all init:*",
@@ -12,6 +11,7 @@
     "init:files": "touch README.md index.html sass/style.scss js/script.js css/style.css",
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
     "init:normalize": "curl https://necolas.github.io/normalize.css/latest/normalize.css -o vendor/normalize.css",
+    "init:mustache": "curl https://raw.githubusercontent.com/janl/mustache.js/master/mustache.js -o vendor/mustache.js",
     "init:git": "git add . && git commit -m \"Init Message\" ",
     "build": "npm-run-all build:*",
     "build:clean": "rimraf css",

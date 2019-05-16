@@ -21,8 +21,6 @@ var flkty = new Flickity( '.main-carousel', {
   // options
 });
 
-////////////////////
-
 
 
 btnStart.addEventListener( 'click', function( event ) {
@@ -35,3 +33,19 @@ btnStart.addEventListener( 'click', function( event ) {
 });
 
 
+/////// MUSTACHE
+
+var carouselItem = document.getElementById('carousel-item').innerHTML;
+
+Mustache.parse(carouselItem);
+
+var listItems = '';
+
+for(var i = 0; i < mySlides.length; i++){
+  console.log(mySlides);
+  listItems += Mustache.render(carouselItem, mySlides[i]);
+};
+
+var fullSlideList = Mustache.render(carouselItem, {listItems});
+
+results.insertAdjacentHTML('beforeend', fullSlideList);
