@@ -1,13 +1,13 @@
-var elem = document.querySelector('.main-carousel');
-var flkty = new Flickity( elem, {
+let elem = document.querySelector('.main-carousel');
+let flkty = new Flickity( elem, {
   // options
   cellAlign: 'left',
   contain: true,
   hash: true,
 });
 
-var progressBar = document.querySelector('.progress-bar');
-var btnStart = document.querySelector('.btn');
+let progressBar = document.querySelector('.progress-bar');
+let btnStart = document.querySelector('.btn');
 
 // vanilla JS
 flkty.on( 'scroll', function( progress ) {
@@ -15,12 +15,17 @@ flkty.on( 'scroll', function( progress ) {
   progressBar.style.width = progress * 100 + '%';
 });
 
-// element argument can be a selector string
-//   for an individual element
-var flkty = new Flickity( '.main-carousel', {
-  // options
+
+
+flkty.on( 'change', function( index ) {
+  console.log('Flickity change ' + index );
+  if (markerFlag === true) {
+  mymap.setView([mySlides[index].lat, mySlides[index].lng], 5);
+  }
 });
 
+// element argument can be a selector string
+//   for an individual element
 
 
 btnStart.addEventListener( 'click', function( event ) {
@@ -28,8 +33,6 @@ btnStart.addEventListener( 'click', function( event ) {
   if ( !matchesSelector( event.target, '.btn' ) ) {
     return;
   }
-  var selector = event.target.getAttribute('data-selector');
+  let selector = event.target.getAttribute('data-selector');
   flkty.selectCell( selector );
 });
-
-

@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Mustache + Flickity</title>
+    <title>Open Street Maps</title>
     <link rel="stylesheet" href="./vendor/normalize.css" />
     <link rel="stylesheet" href="./vendor/flickity/flickity.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -20,7 +23,7 @@
       </div>
       <div class="progress-bar"></div>
     </div>
-
+    <div id="map"></div>
     <script id="carousel-item" type="text/x-tmpl-mustache">
         <div class="carousel-cell carousel-cell-{{ number }}" style="background-image:url({{ image }})">
           <div class="container">
@@ -32,41 +35,56 @@
     <script>
       var mySlides = [
         {
-          number: 1,
+          number: '1',
           image: './images/1600x600-1.jpg',
           title: 'Mountains',
-          description: '<p>Góry, po których się nie wspinałem</p>'
+          description: '<p>Góry, po których się nie wspinałem</p>',
+          lat: '46.9015',
+          lng: '-110.7545',
         },
         {
-          number: 2,
+          number: '2',
           image: './images/1600x600-2.jpg',
           title: 'Pipeline',
-          description: '<p>Tajemnicza rura,<br />pod którą nie przechodziłem</p>'
+          description: '<p>Tajemnicza rura,<br />pod którą nie przechodziłem</p>',
+          lat: '39.9673',
+          lng: '116.1721'
         },
         {
-          number: 3,
+          number: '3',
           image: './images/1600x600-3.jpg',
           title: 'Baloon race',
-          description: '<p>Balony, których nie widziałem<p>'
+          description: '<p>Balony, których nie widziałem<p>',
+          lat: '-26.328',
+          lng: '132.374'
         },
         {
-          number: 4,
+          number: '4',
           image: './images/1600x600-4.jpg',
           title: 'Dare',
-          description: '<p>Skok, którego nie wykonałem</p>'
+          description: '<p>Skok, którego nie wykonałem</p>',
+          lat: '-3.0764084',
+          lng: '37.3539987'
         },
         {
-          number: 5,
+          number: '5',
           image: './images/1600x600-5.jpg',
           title: 'Misty Mountains',
-          description: '<p>Mgła, której nie sfotografowałem</p>'
+          description: '<p>Mgła, której nie sfotografowałem</p>',
+          lat: '50.214',
+          lng: '22.8359'
         }
       ];
     </script> 
+    
     <script src="./vendor/flickity/flickity.pkgd.min.js"></script>
     <script src="https://unpkg.com/flickity-hash@1/hash.js"></script>
     <script src="./vendor/mustache.js"></script>
     <script src="./js/mustache.js"></script>
     <script src="./js/script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
+    <script src="./js/maps.js"></script>
   </body>
 </html>
