@@ -16,57 +16,78 @@
           Back to start
         </button>
       </div>
-      <div id="results" class="main-carousel">
-      </div>
+      <div id="results" class="main-carousel"></div>
       <div class="progress-bar"></div>
     </div>
+    <div class="map-button-wrapper">
+      <button id="center-map">Center map</button>
+      <button id="center-smooth">Center smoothly</button>
+    </div>
+    <div id="map"></div>
 
     <script id="carousel-item" type="text/x-tmpl-mustache">
-        <div class="carousel-cell carousel-cell-{{ number }}" style="background-image:url({{ image }})">
-          <div class="container">
-              <h2> "{{ title }}" </h2>
-              {{{ description }}}
-          </div>
+      <div class="carousel-cell carousel-cell-{{ number }}" style="background-image:url({{ image }})">
+        <div class="container">
+            <h2> "{{ title }}" </h2>
+            {{{ description }}}
         </div>
+      </div>
     </script>
     <script>
       var mySlides = [
         {
-          number: 1,
-          image: './images/1600x600-1.jpg',
-          title: 'Mountains',
-          description: '<p>Góry, po których się nie wspinałem</p>'
+          number: "1",
+          image: "./images/1600x600-1.jpg",
+          title: "Mountains",
+          description: "<p>Góry, po których się nie wspinałem</p>",
+          lat: "46.9015",
+          lng: "-110.7545"
         },
         {
-          number: 2,
-          image: './images/1600x600-2.jpg',
-          title: 'Pipeline',
-          description: '<p>Tajemnicza rura,<br />pod którą nie przechodziłem</p>'
+          number: "2",
+          image: "./images/1600x600-2.jpg",
+          title: "Pipeline",
+          description:
+            "<p>Tajemnicza rura,<br />pod którą nie przechodziłem</p>",
+          lat: "39.9673",
+          lng: "116.1721"
         },
         {
-          number: 3,
-          image: './images/1600x600-3.jpg',
-          title: 'Baloon race',
-          description: '<p>Balony, których nie widziałem<p>'
+          number: "3",
+          image: "./images/1600x600-3.jpg",
+          title: "Baloon race",
+          description: "<p>Balony, których nie widziałem<p>",
+          lat: "-26.328",
+          lng: "132.374"
         },
         {
-          number: 4,
-          image: './images/1600x600-4.jpg',
-          title: 'Dare',
-          description: '<p>Skok, którego nie wykonałem</p>'
+          number: "4",
+          image: "./images/1600x600-4.jpg",
+          title: "Dare",
+          description: "<p>Skok, którego nie wykonałem</p>",
+          lat: "-3.0764084",
+          lng: "37.3539987"
         },
         {
-          number: 5,
-          image: './images/1600x600-5.jpg',
-          title: 'Misty Mountains',
-          description: '<p>Mgła, której nie sfotografowałem</p>'
+          number: "5",
+          image: "./images/1600x600-5.jpg",
+          title: "Misty Mountains",
+          description: "<p>Mgła, której nie sfotografowałem</p>",
+          lat: "50.214",
+          lng: "22.8359"
         }
       ];
-    </script> 
+    </script>
     <script src="./vendor/flickity/flickity.pkgd.min.js"></script>
     <script src="https://unpkg.com/flickity-hash@1/hash.js"></script>
     <script src="./vendor/mustache.js"></script>
     <script src="./js/mustache.js"></script>
     <script src="./js/script.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhB5a-kVITUh6-1TSyRCmeKO_Y0EDdPgk&callback=initMap"
+    ></script>
+    <script src="./js/maps.js"></script>
   </body>
 </html>
