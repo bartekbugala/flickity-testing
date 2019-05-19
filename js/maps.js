@@ -1,4 +1,5 @@
 'use strict';
+let markerFlag = true;
 (function () {
 
 	let locationArray = mySlides;
@@ -6,13 +7,10 @@
 	window.initMap = function () {
 		let markers = [];
 
-		let initPos = latLngFromArr(locationArray, 0);
-		let secondPos = latLngFromArr(locationArray, 1);
-
-		let map = new google.maps.Map(document.getElementById('map'), {
+		let myMap = new google.maps.Map(document.getElementById('mapid'), {
 
 			zoom: 4,
-			center: initPos
+			center: latLngFromArr(locationArray, flkty.selectedIndex)
 		});
 
 		function latLngFromArr(array, i) {
@@ -23,55 +21,41 @@
 
 		for (let i = 0; i < locationArray.length; i++) {
 			markers[i] = new google.maps.Marker({
-				position: latLngFromArr(mySlides, i),
+				position: latLngFromArr(locationArray, i),
 				title: locationArray[i].title,
-				map: map
+				map: myMap
 			});
 			markers[i].addListener('click', function () {
-				flkty.selectCell(parseInt(locationArray[i].number));
-				
+				markerFlag = false;
+				flkty.selectCell(i);
+				markerFlag = true;
+
 			});
 		}
 
-
-
-
-
-		// Następnie dodajemy akcję do guzika, dokładnie tak samo jak robiliśmy to w poprzednim module.
-
-		document.getElementById('center-map').addEventListener('click', function (event) {
-			event.preventDefault();
-			// Najpierw wykorzystujemy metodę panTo w obiekcie map do przesunięcia współrzędnych mapy:
-			map.panTo(latLngFromArr(locationArray, flkty.selectedIndex));
-			// A następnie zmieniamy powiększenie mapy:
-			map.setZoom(10);
+		flkty.on('change', function (index) {
+			if (markerFlag === true) {
+				myMap.panTo(latLngFromArr(mySlides, index));
+			}
 		});
 
-		/* Jak widzisz, guzik "Center map" nagle przeskakuje do docelowych pozycji i powiększenia. 
-		
-		Jako alternatywę przygotowaliśmy funkcję smoothPanAndZoom, która korzysta z funkcji smoothZoom i smoothPan. Jest to nasz własny kod, który jest przykładem tego w jaki sposób można wykorzystać JavaScript oraz podstawy matematyki do wykonania ciekawych manipulacji. 
-		
-		Aby zobaczyć ten efekt w akcji, kliknij najpierw guzik "Center map", a następnie "Center smoothly". 
-		*/
+
+
+
+
+			document.getElementById('center-map').addEventListener('click', function (event) {
+			event.preventDefault();
+			myMap.panTo(latLngFromArr(locationArray, flkty.selectedIndex));
+			myMap.setZoom(10);
+		});
 
 		document.getElementById('center-smooth').addEventListener('click', function (event) {
 			event.preventDefault();
-			smoothPanAndZoom(map, 7, initPos);
+			smoothPanAndZoom(myMap, 7, latLngFromArr(locationArray, flkty.selectedIndex));
 		});
 	}
 
-	/* Efekt przejścia, który zaimplementowaliśmy za pomocą funkcji smoothPanAndZoom na pewno nie jest idealny, ponieważ staraliśmy się użyć dość prostego algorytmu. 
-	
-	ĆWICZENIE:
-	Poświęć 15 minut na próbę zrozumienia algorytmu działania funkcji smoothPanAndZoom. Nie zatrzymuj się na jednej linii na dłużej niż 3 minuty - jeśli nie rozumiesz, idź dalej i spróbuj zrozumieć resztę kodu. 
-	
-	Nie bój się używać console.log lub document.write do sprawdzania wartości zmiennych!
-	
-	Algorytm tych funkcji trudny do zrozumienia, szczególnie w trzecim tygodniu nauki JavaScript. Nie przejmuj się, jeśli go nie zrozumiesz, Zawsze możesz wrócić do tego przykładu za kilka tygodni. ;)
-	*/
-
 	let smoothPanAndZoom = function (map, zoom, coords) {
-		// Trochę obliczeń, aby wyliczyć odpowiedni zoom do którego ma oddalić się mapa na początku animacji.
 		let jumpZoom = zoom - Math.abs(map.getZoom() - zoom);
 		jumpZoom = Math.min(jumpZoom, zoom - 1);
 		jumpZoom = Math.max(jumpZoom, 3);
