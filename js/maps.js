@@ -1,56 +1,65 @@
 'use strict';
-(function(){ 
+(function () {
 
-    let locationArray = mySlides;
+	let locationArray = mySlides;
 
-    window.initMap = function () {
-        let markers = [];
+	window.initMap = function () {
+		let markers = [];
 
-        let initPos = latLngFromArr(locationArray, 0);
-        let secondPos = latLngFromArr(locationArray, 1);
+		let initPos = latLngFromArr(locationArray, 0);
+		let secondPos = latLngFromArr(locationArray, 1);
 
-        let map = new google.maps.Map(document.getElementById('map'), {
+		let map = new google.maps.Map(document.getElementById('map'), {
 
-            zoom: 4,
-            center: initPos
-        });
+			zoom: 4,
+			center: initPos
+		});
 
-        for (let i = 0; i < locationArray.length; i++) {
-            markers[i] = new google.maps.Marker({
-                position: latLngFromArr(mySlides, i),
-                title: locationArray[i].title,
-                map: map
-            });
-            markers[i].addListener('click', function () {
+		function latLngFromArr(array, i) {
+			let latitude = parseFloat(array[i].lat);
+			let longitude = parseFloat(array[i].lng);
+			return { lat: latitude, lng: longitude };
+		}
 
-                alert('You clicked marker:' + locationArray[i].number);
-            });
-        }
-		
+		for (let i = 0; i < locationArray.length; i++) {
+			markers[i] = new google.maps.Marker({
+				position: latLngFromArr(mySlides, i),
+				title: locationArray[i].title,
+				map: map
+			});
+			markers[i].addListener('click', function () {
+				flkty.selectCell(parseInt(locationArray[i].number));
+				
+			});
+		}
+
+
+
+
+
 		// Następnie dodajemy akcję do guzika, dokładnie tak samo jak robiliśmy to w poprzednim module.
-		
-		document.getElementById('center-map').addEventListener('click', function(event){
+
+		document.getElementById('center-map').addEventListener('click', function (event) {
 			event.preventDefault();
 			// Najpierw wykorzystujemy metodę panTo w obiekcie map do przesunięcia współrzędnych mapy:
-			map.panTo(secondPos);
-			
+			map.panTo(latLngFromArr(locationArray, flkty.selectedIndex));
 			// A następnie zmieniamy powiększenie mapy:
 			map.setZoom(10);
 		});
-		
+
 		/* Jak widzisz, guzik "Center map" nagle przeskakuje do docelowych pozycji i powiększenia. 
 		
 		Jako alternatywę przygotowaliśmy funkcję smoothPanAndZoom, która korzysta z funkcji smoothZoom i smoothPan. Jest to nasz własny kod, który jest przykładem tego w jaki sposób można wykorzystać JavaScript oraz podstawy matematyki do wykonania ciekawych manipulacji. 
 		
 		Aby zobaczyć ten efekt w akcji, kliknij najpierw guzik "Center map", a następnie "Center smoothly". 
 		*/
-		
-		document.getElementById('center-smooth').addEventListener('click', function(event){
+
+		document.getElementById('center-smooth').addEventListener('click', function (event) {
 			event.preventDefault();
-			smoothPanAndZoom(map, 7, secondPos);
+			smoothPanAndZoom(map, 7, initPos);
 		});
-	}	
-	
+	}
+
 	/* Efekt przejścia, który zaimplementowaliśmy za pomocą funkcji smoothPanAndZoom na pewno nie jest idealny, ponieważ staraliśmy się użyć dość prostego algorytmu. 
 	
 	ĆWICZENIE:
@@ -61,30 +70,30 @@
 	Algorytm tych funkcji trudny do zrozumienia, szczególnie w trzecim tygodniu nauki JavaScript. Nie przejmuj się, jeśli go nie zrozumiesz, Zawsze możesz wrócić do tego przykładu za kilka tygodni. ;)
 	*/
 
-	let smoothPanAndZoom = function(map, zoom, coords){
+	let smoothPanAndZoom = function (map, zoom, coords) {
 		// Trochę obliczeń, aby wyliczyć odpowiedni zoom do którego ma oddalić się mapa na początku animacji.
 		let jumpZoom = zoom - Math.abs(map.getZoom() - zoom);
-		jumpZoom = Math.min(jumpZoom, zoom -1);
+		jumpZoom = Math.min(jumpZoom, zoom - 1);
 		jumpZoom = Math.max(jumpZoom, 3);
 
 		// Zaczynamy od oddalenia mapy do wyliczonego powiększenia. 
-		smoothZoom(map, jumpZoom, function(){
+		smoothZoom(map, jumpZoom, function () {
 			// Następnie przesuwamy mapę do żądanych współrzędnych.
-			smoothPan(map, coords, function(){
+			smoothPan(map, coords, function () {
 				// Na końcu powiększamy mapę do żądanego powiększenia. 
-				smoothZoom(map, zoom); 
+				smoothZoom(map, zoom);
 			});
 		});
 	};
-	
-	let smoothZoom = function(map, zoom, callback) {
+
+	let smoothZoom = function (map, zoom, callback) {
 		let startingZoom = map.getZoom();
 		let steps = Math.abs(startingZoom - zoom);
-		
+
 		// Jeśli steps == 0, czyli startingZoom == zoom
-		if(!steps) {
+		if (!steps) {
 			// Jeśli podano trzeci argument
-			if(callback) {
+			if (callback) {
 				// Wywołaj funkcję podaną jako trzeci argument.
 				callback();
 			}
@@ -97,13 +106,15 @@
 
 		let i = 0;
 		// Wywołujemy setInterval, który będzie wykonywał funkcję co X milisekund (X podany jako drugi argument, w naszym przypadku 80)
-		let timer = window.setInterval(function(){
+		let timer = window.setInterval(function () {
 			// Jeśli wykonano odpowiednią liczbę kroków
-			if(++i >= steps) {
+			if (++i >= steps) {
 				// Wyczyść timer, czyli przestań wykonywać funkcję podaną w powyższm setInterval
 				window.clearInterval(timer);
 				// Jeśli podano trzeci argument
-				if(callback) {
+				// Jeśli trzeci argument to funkcja...
+
+				if (callback) {
 					// Wykonaj funkcję podaną jako trzeci argument
 					callback();
 				}
@@ -114,28 +125,24 @@
 	};
 
 	// Poniższa funkcja działa bardzo podobnie do smoothZoom. Spróbuj samodzielnie ją przeanalizować. 
-	let smoothPan = function(map, coords, callback) {
+	let smoothPan = function (map, coords, callback) {
 		let mapCenter = map.getCenter();
 		coords = new google.maps.LatLng(coords);
 
 		let steps = 12;
-		let panStep = {lat: (coords.lat() - mapCenter.lat()) / steps, lng: (coords.lng() - mapCenter.lng()) / steps};
+		let panStep = { lat: (coords.lat() - mapCenter.lat()) / steps, lng: (coords.lng() - mapCenter.lng()) / steps };
 
 		let i = 0;
-		let timer = window.setInterval(function(){
-			if(++i >= steps) {
+		let timer = window.setInterval(function () {
+			if (++i >= steps) {
 				window.clearInterval(timer);
-				if(callback) callback();
+				if (callback) callback();
 			}
-			map.panTo({lat: mapCenter.lat() + panStep.lat * i, lng: mapCenter.lng() + panStep.lng * i});
-		}, 1000/30);
-    }; 
-    function latLngFromArr(array, i) {
-        let latitude = parseFloat(array[i].lat);
-        let longitude = parseFloat(array[i].lng);
-        return { lat: latitude, lng: longitude };
-    }
-	
-})(); 
+			map.panTo({ lat: mapCenter.lat() + panStep.lat * i, lng: mapCenter.lng() + panStep.lng * i });
+		}, 1000 / 30);
+	};
+
+
+})();
 
 

@@ -35,9 +35,21 @@ html, body {
 
   }
   .map-button-wrapper {
-    left: 10px;
+    bottom: 10px;
+    left: 50%;
     position: absolute;
     z-index: 99999;
+    button {
+        box-shadow: unset;
+        padding: 10px;
+        background-color: white;
+        border: none;
+        border-radius: 5px;
+        color: rgb(104, 104, 104);
+        text-transform: uppercase;
+        font-family: arial;
+        font-weight: bold;
+    }
   }
 
 

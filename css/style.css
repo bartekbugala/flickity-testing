@@ -116,55 +116,68 @@ html, body {
 }
 
 .map-button-wrapper {
-  left: 10px;
+  bottom: 10px;
+  left: 50%;
   position: absolute;
   z-index: 99999;
 }
 
+.map-button-wrapper button {
+  box-shadow: unset;
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: #686868;
+  text-transform: uppercase;
+  font-family: arial;
+  font-weight: bold;
+}
+
 @media (min-width: 992px) {
   .carousel-cell-1 .container p {
-    right: 18%;
-    bottom: 17%;
+    right: 19%;
+    bottom: 27%;
     top: unset;
   }
   .carousel-cell-2 .container p {
-    right: 13%;
-    bottom: 41%;
+    right: 20%;
+    bottom: 26%;
     top: unset;
   }
   .carousel-cell-3 .container p {
-    right: 32%;
-    bottom: 11%;
+    right: 6%;
+    bottom: 23%;
     top: unset;
   }
   .carousel-cell-4 .container p {
-    right: 19%;
-    bottom: 7%;
+    right: 30%;
+    bottom: 44%;
     top: unset;
   }
   .carousel-cell-5 .container p {
-    right: 13%;
-    bottom: 24%;
+    right: 31%;
+    bottom: 28%;
     top: unset;
   }
   .carousel-cell-6 .container p {
-    right: 33%;
-    bottom: 43%;
+    right: 23%;
+    bottom: 29%;
     top: unset;
   }
   .carousel-cell-7 .container p {
-    right: 16%;
+    right: 22%;
     bottom: 18%;
     top: unset;
   }
   .carousel-cell-8 .container p {
-    right: 7%;
-    bottom: 22%;
+    right: 24%;
+    bottom: 7%;
     top: unset;
   }
   .carousel-cell-9 .container p {
-    right: 24%;
-    bottom: 11%;
+    right: 18%;
+    bottom: 26%;
     top: unset;
   }
 }
