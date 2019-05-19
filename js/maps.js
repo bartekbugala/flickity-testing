@@ -8,9 +8,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 for (let i = 0; i < mySlides.length; i++) {
 
-    (function () {
-
-        let markers = [];
+		let markers = [];
         markers[i] = L.marker([mySlides[i].lat, mySlides[i].lng]);
         markers[i].addTo(mymap)
             .bindPopup(mySlides[i].description)
@@ -21,5 +19,5 @@ for (let i = 0; i < mySlides.length; i++) {
 
             });
 
-    })();
+    
 }
