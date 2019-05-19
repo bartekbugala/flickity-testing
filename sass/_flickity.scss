@@ -2,9 +2,10 @@
 .carousel-wrapper {
   height: 50%;
   margin-bottom: 20px;
-  }
+
   .main-carousel {
     height: 100%;
+    position: relative;
   }
   @include carouselCells;
   .flickity-page-dots {
@@ -34,3 +35,35 @@
       width: 0;
       background: #333;
     }
+
+    .button-group {
+      position: absolute;
+      z-index: 1000;
+      left: 50%;
+      translate: translate(-40%);
+      top: 20px;
+      .btn {
+          z-index: 1000;
+          opacity: 0.8;
+          box-shadow: unset;
+          white-space: wrap;
+          width: 80px;
+          height: 80px;
+          text-align: center;
+          padding: 12px;
+          background-color: white;
+          border: none;
+          border-radius: 50%;
+          color: rgb(82, 82, 82);
+          text-transform: uppercase;
+          font-family: arial;
+          font-weight: bold;
+          &:hover {
+              opacity: 1;
+          }
+      }
+  }
+  }
+
+
+ 
